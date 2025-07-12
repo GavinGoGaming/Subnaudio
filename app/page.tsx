@@ -2,7 +2,7 @@
 import { Button, CssVarsProvider, Input, Sheet } from "@mui/joy";
 import Image from "next/image";
 import { SubnauticaAudio } from "./Subnaudio";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {toBlob} from "html-to-image";
 
 type IconTypes = 'data' | 'log' | 'person' | 'question' | 'radio' | 'sunbeam';
@@ -24,7 +24,11 @@ export default function Home() {
     uuid: string;
     editing: boolean;
   }[]>([]);
-  const Subnaudio = new SubnauticaAudio();
+  const [Subnaudio, setSubnaudio] = useState<SubnauticaAudio | null>(null);
+  useEffect(() => {
+    const audio = new SubnauticaAudio();
+    setSubnaudio(audio);
+  }, []);
   return (
     <CssVarsProvider defaultMode="dark">
       <div style={{
@@ -45,6 +49,10 @@ export default function Home() {
               color="primary"
               size="lg"
               onClick={() => {
+                if (!Subnaudio) {
+                  console.error("SubnauticaAudio not initialized");
+                  return;
+                }
                 Subnaudio.amy(text || "No text inputted.").then((blob) => {
                   setPdaMessages((prev) => [
                     ...prev,

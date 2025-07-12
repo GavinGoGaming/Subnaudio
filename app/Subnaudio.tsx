@@ -3,7 +3,12 @@ export class SubnauticaAudio {
     private audioContext: AudioContext | null = null;
 
     constructor() {
-        this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext || null)();
+        if(!window) return;
+        if(typeof AudioContext !== 'undefined') {
+            this.audioContext = new AudioContext();
+        } else if((window as any).webkitAudioContext) {
+            this.audioContext = new (window as any).webkitAudioContext();
+        }
     }
 
     private async fetchTTS(text: string, voice: string = 'Amy'): Promise<ArrayBuffer> {
