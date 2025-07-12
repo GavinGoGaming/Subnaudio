@@ -1,0 +1,144 @@
+@import url('https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #0b0b0f;
+    color: #ffffff;
+}
+
+body {
+    background: url(/subnauticapda_pda_sm.png);
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 100%;
+    padding: 65px 0 45px;
+    width: 100%;
+    filter: drop-shadow(2px 6px 20px rgba(0, 0, 0, .5));
+    cursor: url(/cursor.svg), pointer !important;
+}
+
+.pda {
+    width: 100%;
+}
+
+.pda-message {
+    color: #e0f4ff;
+    font-family: Ubuntu, sans-serif;
+    min-height: 80px;
+    border: 1px solid rgba(175, 255, 255, .5);
+    border-radius: 30px;
+    padding: 0 20px;
+    box-shadow: inset 0 0 35px #00eeff80;
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    margin: 0 5px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+}
+.out-pda {
+    flex-direction: column;
+}
+
+.pda-message img {
+    width: auto;
+    height: 40px;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.pda-message::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 50px;
+    height: calc(100% - 20px);
+    border: 4px solid #33b8aa;
+    border-radius: 20px;
+    background: transparent;
+    clip-path: inset(0 70% 0 0 round 40px 0 0 30px);
+}
+
+.pda-message::after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 50px;
+    height: calc(100% - 20px);
+    border: 4px solid #33b8aa;
+    border-radius: 20px;
+    background: transparent;
+    clip-path: inset(0 0 0 70% round 0 40px 30px 0);
+}
+
+.message-control {
+    display: flex;
+}
+.message-control button {
+    width: 40px;
+    height: 50px;
+    padding: 0;
+    background-color: #33b8aa;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 0px;
+    border-left: 2px solid rgba(175, 255, 255, .5);
+}
+.message-control button:first-child {
+    border-left: none;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.message-control button:last-child {
+    border-right: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.message-control button img {
+    width: 80%;
+    height: auto;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+    object-fit: contain;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        background: url(/subnauticapda_pda_lg.png);
+        background-position: top right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        max-height: 100vh;
+    }
+
+    .pda {
+        width: 75%;
+        max-width: unset;
+        height: 100%;
+        max-height: 100vh;
+        margin: 0 auto;
+        padding: 65px 0 45px;
+        margin-right: 7.5%;
+        margin-top: 1%;
+    }
+    
+    .out-pda {
+        flex-direction: row;
+    }
+    .pda-message {
+        font-size: 1rem;
+    }
+}
