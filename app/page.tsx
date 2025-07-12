@@ -108,7 +108,7 @@ export default function Home() {
         {pdaMessages.map((message) => (
           <div style={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px'}} className="out-pda" key={message.uuid}>
             <div className="pda-message" id={message.uuid}>
-              <img src={`/pda_${message.icon}.png`} />
+              <img src={`./pda_${message.icon}.png`} />
               {message.editing ? <Input
                 value={message.realText}
                 sx={{ flexGrow: 1 }}
@@ -137,7 +137,7 @@ export default function Home() {
                 onClick={() => {
                   setPdaMessages((prev) => prev.map(m => m.uuid === message.uuid ? { ...m, icon: NextIconType(m.icon) } : m));
                 }}
-              ><img src={`/pda_${NextIconType(message.icon)}.png`} /></Button>
+              ><img src={`./pda_${NextIconType(message.icon)}.png`} /></Button>
               <Button
                 onClick={() => {
                   setPdaMessages((prev) => prev.filter(m => m.uuid !== message.uuid));
