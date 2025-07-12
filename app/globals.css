@@ -12,14 +12,14 @@ body {
 }
 
 body {
-    background: url(./subnauticapda_pda_sm.png);
+    background: url(https://pages.gavingogaming.com/Subnaudio/subnauticapda_pda_sm.png);
     background-repeat: repeat-x;
     background-size: contain;
     height: 100%;
     padding: 65px 0 45px;
     width: 100%;
     filter: drop-shadow(2px 6px 20px rgba(0, 0, 0, .5));
-    cursor: url(./cursor.svg), pointer !important;
+    cursor: url(https://pages.gavingogaming.com/Subnaudio/cursor.svg), pointer !important;
 }
 
 .pda {
@@ -116,7 +116,7 @@ body {
 
 @media only screen and (min-width: 1024px) {
     body {
-        background: url(./subnauticapda_pda_lg.png);
+        background: url(https://pages.gavingogaming.com/Subnaudio/subnauticapda_pda_lg.png);
         background-position: top right;
         background-size: cover;
         background-repeat: no-repeat;
